@@ -1,0 +1,19 @@
+http://stackoverflow.com/questions/1085801/how-to-get-the-selected-value-of-dropdownlist-using-javascript
+
+
+If you have a select element that looks like this:
+
+<select id="ddlViewBy">
+<option value="1">test1</option>
+<option value="2" selected="selected">test2</option>
+<option value="3">test3</option>
+</select>
+Running this code:
+
+var e = document.getElementById("ddlViewBy");
+var strUser = e.options[e.selectedIndex].value;
+Would make strUser be 2. If what you actually want is test2, then do this:
+
+var e = document.getElementById("ddlViewBy");
+var strUser = e.options[e.selectedIndex].text;
+Which would make strUser be test2
